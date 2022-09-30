@@ -1,12 +1,12 @@
 import sys
 import os.path
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from dynamics.car_model import Car
 import numpy
 from scipy.optimize import minimize
 import argparse
-
 
 global car
 car = Car()
@@ -31,7 +31,7 @@ def load_course_map(course_name="COTA"):
     :return elev_profile: map of the elevations on a course
     """
     if course_name == "COTA":
-        with open('COTAelevation_var.txt', 'r') as file:
+        with open('optimization/COTAelevation_var.txt', 'r') as file:
             line = file.readline()
             data = []
             while line:
